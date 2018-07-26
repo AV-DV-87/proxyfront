@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttptestService} from '../httptest.service';
+import {Reponse} from '../reponse';
 
 @Component({
   selector: 'app-test',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  constructor() { }
+  // tableau de réponse
+  reponses: Reponse[];
+
+  // invocation du service
+  constructor(private httpTest: HttptestService) {
+  }
 
   ngOnInit() {
+  }
+
+  add(commentaire: string): void {
+    commentaire = commentaire.trim();
+    if (!name) {
+      return;
+    }
+    this.httpTest.createReponse({commentaire} as Reponse)
+      .subscribe(reponse => {
+        this.reponses.push(reponse);
+      });
   }
 
 }

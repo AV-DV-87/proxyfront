@@ -15,12 +15,12 @@ export class HttptestService {
     this.apiUrl = ENV.apiUrl + '/reponse';
   }
 
-  createRepoonse(reponse: Reponse): Observable<Reponse> {
-    const result = new Subject<Reponse>();
-    this.httpClient.post<Reponse>(this.apiUrl, reponse)
-      .subscribe((newReponse)=> {
-      }
-      })
-    return result;
+  createReponse(reponse: Reponse): Observable<Reponse> {
+    return this.httpClient.post<Reponse>(this.apiUrl, reponse);
+  }
+
+  getReponse(id: number): Observable<Reponse> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.httpClient.get<Reponse>(url);
   }
 }
