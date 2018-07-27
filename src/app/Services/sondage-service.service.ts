@@ -29,7 +29,6 @@ export class SondageServiceService {
 			.subscribe(
 				(sondage) => result.next(sondage)
       );
-    console.log(this.sondage);
 		return result;
 	}
 }
