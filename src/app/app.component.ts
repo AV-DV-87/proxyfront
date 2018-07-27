@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Client } from './client';
-import { ClientService } from './Services/client.service';
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,17 @@ import { ClientService } from './Services/client.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  
+
+
   title = 'app';
-  editClient: Client;
+ 
 
   constructor(){
   
   }
 
  
+
 }

@@ -21,7 +21,7 @@ export class TestComponent implements OnInit {
 
   add(commentaire: string): void {
     commentaire = commentaire.trim();
-    if (!name) {
+    if (!commentaire) {
       return;
     }
     this.httpTest.createReponse({commentaire} as Reponse)
