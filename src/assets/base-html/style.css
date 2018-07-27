@@ -1,0 +1,40 @@
+/* Style général */
+.mid-logo{
+    height: 6rem;
+ }
+
+.principal{
+    max-height: 90vh;
+    padding: 5vh;
+}
+.main-head{
+    height: 20vh;
+}
+
+.content{
+    height: 70vh;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+/* VUE 1 spécifique */
+.pouce {
+    height: 20vh;
+}
+.pouce-ok {
+    color: green;
+}
+.pouce-no {
+    color: red;
+}
+
+/* VUE 1 BIS DEVIS */
+.bg-devis {
+    background: url('../img/bg-devis.jpg');
+    opacity: 0.5;
+}
+.titre-devis{
+    font-size: 4rem;
+}
