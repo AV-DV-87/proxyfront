@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Sondage } from '../sondage';
 import { SondageServiceService } from '../Services/sondage-service.service';
+import { Sondage } from '../sondage';
+import { Observable } from '../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-sondage',
@@ -9,12 +10,12 @@ import { SondageServiceService } from '../Services/sondage-service.service';
 })
 export class SondageComponent implements OnInit {
 
-  @Input() sondage: Sondage;
+  @Input() sondage: Observable<Sondage>;
 
   constructor(private sondageService: SondageServiceService) { }
 
   ngOnInit() {
-    this.sondageService.getSondage()
+    this.sondage = this.sondageService.getSondage();
   }
 
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment as ENV } from '../../environments/environment';
 import { Sondage } from '../sondage';
-import { Observable } from 'rxjs'
+import { Observable, Subject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +10,26 @@ import { Observable } from 'rxjs'
 export class SondageServiceService {
 
   private apiUrl: string;
+  private sondage: Sondage;
 
   constructor(private httpClient: HttpClient) {
     this.apiUrl= ENV.apiUrl + '/sondage';
   }
 
-  getSondage(): Observable<Sondage> {
-    let url = this.apiUrl;
-    return this.httpClient.get<Sondage>(url);
-  }
+  // getSondage(): Sondage {
+  //   let url = this.apiUrl;
+  //   this.httpClient.get<Sondage>(url).subscribe((sondage) => this.sondage = sondage);
+  //   console.log(this.sondage);
+  //   return this.sondage;
+  // }
 
+  getSondage(): Observable<Sondage> {
+		let result = new Subject<Sondage>();
+		this.httpClient.get<Sondage>(this.apiUrl)
+			.subscribe(
+				(sondage) => result.next(sondage)
+      );
+    console.log(this.sondage);
+		return result;
+	}
 }

@@ -9,4 +9,8 @@ export class Sondage {
     toString(){
         return `[Sondage id=${this.id}, dateDebut=${this.dateDebut}, dateFerrmeture=${this.dateFermeture}, dateFin=${this.dateFin}]`
     }
+
+    getId(){
+        return this.id;
+    }
 }

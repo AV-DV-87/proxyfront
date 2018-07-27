@@ -1,4 +1,4 @@
-<div >
+<div *ngIf="id != undefined">
     <div class="col-md-10 mx-auto content">
         <div class="row h-25 text-center">
             <div class="col">
@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div >
+<div *ngIf="id == undefined">
     <div class="col-md-10 mx-auto content bg-devis">
         <div class="row h-100 d-flex flex-column align-items-center justify-content-center">
 
