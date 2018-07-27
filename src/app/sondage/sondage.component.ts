@@ -15,7 +15,10 @@ export class SondageComponent implements OnInit {
   constructor(private sondageService: SondageServiceService) { }
 
   ngOnInit() {
-    this.sondageService.getSondage().subscribe((sondage) => this.sondage = sondage);
+    this.sondageService.getSondage().subscribe((sondage) => {
+      this.sondage = sondage;
+      console.log(this.sondage)
+    });
   }
 
 }
