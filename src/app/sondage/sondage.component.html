@@ -1,4 +1,4 @@
-<div *ngIf="sondage != undefined">
+<div *ngIf="sondage != undefined && showClient == false && showReponse == false">
     <div class="col-md-10 mx-auto content">
         <div class="row h-25 text-center">
             <div class="col">
@@ -7,10 +7,10 @@
         </div>
         <div class="row h-75">
             <div class="col-6 d-flex align-items-center justify-content-center">
-                <i class="far fa-thumbs-up fa-10x pouce-ok"></i>
+                <a (click)="showClient = !showClient" ><i class="far fa-thumbs-up fa-10x pouce-ok"></i></a>
             </div>
             <div class="col-6 d-flex align-items-center justify-content-center">
-                <i class="far fa-thumbs-down fa-10x pouce-no"></i>
+                <a (click)="showReponse = !showReponse" ><i class="far fa-thumbs-down fa-10x pouce-no"></i></a>
             </div>
         </div>
     </div>
@@ -26,3 +26,6 @@
         </div>
     </div>
 </div>
+
+<app-client *ngIf="showClient == true"></app-client>
+<app-reponse *ngIf="showReponse == true"></app-reponse>
