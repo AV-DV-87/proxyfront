@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Sondage } from '../sondage';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { SondageServiceService } from '../Services/sondage-service.service';
+import { Sondage } from '../sondage';
+import { Observable } from '../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-sondage',
@@ -10,11 +11,22 @@ import { SondageServiceService } from '../Services/sondage-service.service';
 export class SondageComponent implements OnInit {
 
   @Input() sondage: Sondage;
+  @Output() showClient: boolean;
+  @Output() showReponse: boolean;
 
-  constructor(private sondageService: SondageServiceService) { }
+
+  constructor(private sondageService: SondageServiceService) {
+   
+    this.showClient=false;
+    this.showReponse=false;
+
+  }
 
   ngOnInit() {
-    this.sondageService.getSondage()
+    this.sondageService.getSondage().subscribe((sondage) => {
+      this.sondage = sondage;
+      console.log(this.sondage)
+    });
   }
 
 }

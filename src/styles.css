@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* Style général */
+.mid-logo{
+    height: 6rem;
+ }
+
+.principal{
+    max-height: 90vh;
+    padding: 5vh;
+}
+.main-head{
+    height: 20vh;
+}
+
 .content{
     height: 70vh;
 }
