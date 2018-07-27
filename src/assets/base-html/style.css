@@ -17,6 +17,22 @@
 
 h2{
     font-size: 2rem;
+    color: #179ad7;
+}
+.text-bank{
+    color: rgba(17,30,108,1.0);
+}
+
+.text-bank-light{
+    color: #179ad7;
+}
+
+.bg-bank{
+    background-color: rgba(17,30,108,1.0);
+}
+
+.bg-bank-light{
+    background-color: #179bd7;
 }
 
 /* VUE 1 spécifique */
@@ -30,11 +46,13 @@ h2{
     color: red;
 }
 
+
 /* VUE 1 BIS DEVIS */
 .bg-devis {
-    background: url('../img/bg-devis.jpg');
-    opacity: 0.5;
+    background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('../img/bg-devis.jpg');
 }
 .titre-devis{
     font-size: 4rem;
+    color: #179ad7;
+    text-shadow: 1px 1px 2px white;
 }
