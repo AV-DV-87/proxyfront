@@ -4,34 +4,32 @@
       <h2> Déja Client ! </h2>
       <form (ngSubmit)="submit(blogForm)" #blogForm="ngForm">
         <div class="form-group">
-          <input id="numero" name="numero" class="form-control" [(ngModel)]="model.numero" minlength="10" maxlength="10" #numeroControl="ngModel"
+          <input id="numero" name="numero" class="form-control" [(ngModel)]="model.numero" minlength="10" maxlength="10"
             required placeholder="N° Identifiant">
-          <span class="error-msg" [ngStyle]="{'opacity': numeroControl.invalid && nomControl.dirty ? 1 : 0 }">le numéro de client est composer de 10 chiffres.</span>
+         
         </div>
-        <button class="btn btn-primary" [disabled]='titleControl.invalid'>Valider</button>
+        <button class="btn btn-primary" >Valider</button>
       </form>
       <br>
       <h1 class="text-primary mx-auto">Ou</h1>
 
-  
     <form (ngSubmit)="submit(blogForm)" #blogForm="ngForm">
       <div class="form-group">
-        <input id="nom" name="nom" class="form-control" [(ngModel)]="model.nom" #nomControl="ngModel" required placeholder="nom">
-        <span class="error-msg" [ngStyle]="{'opacity': nomControl.invalid && nomControl.dirty ? 1 : 0 }">Champ obligatoire.</span>
+        <input id="nom" name="nom" class="form-control" [(ngModel)]="model.nom"  required placeholder="nom">
       </div>
       <div class="form-group">
-        <input id="prenom" name="prenom" class="form-control" [(ngModel)]="model.prenom" #prenomControl="ngModel" required placeholder="prenom">
+        <input id="prenom" name="prenom" class="form-control" [(ngModel)]="model.prenom"  required placeholder="prenom">
       </div>
       <div class="form-group">
-        <input id="mail" name="mail" class="form-control" [(ngModel)]="model.mail" #mailControl="ngModel" required placeholder="mail@domain.com">
-        <span class="error-msg" [ngStyle]="{'opacity': mailControl.invalid && mailControl.dirty ? 1 : 0 }">Champ obligatoire.</span>
+        <input id="mail" name="mail" class="form-control" [(ngModel)]="model.mail"  required placeholder="mail@domain.com">
+        
       </div>
       <div class="form-group">
-        <input id="telephone" name="telephone" class="form-control" [(ngModel)]="model.telephone" minlength="10" maxlength="10" #telephoneControl="ngModel"
+        <input id="telephone" name="telephone" class="form-control" [(ngModel)]="model.telephone" minlength="10" maxlength="10" 
           required placeholder="ex:0612345678">
-        <span class="error-msg" [ngStyle]="{'opacity': mailControl.invalid && mailControl.dirty ? 1 : 0 }">numéro de telephone incorrect.</span>
+        
       </div>
-      <button class="btn btn-primary" [disabled]='titleControl.invalid'>Valider</button>
+      <button class="btn btn-primary" >Valider</button>
     </form>
   </div>
 </div>

@@ -1,15 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Client } from '../client';
+import { NgForm } from '@angular/forms';
+import { ClientService } from '../Services/client.service';
+
+
 
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.css']
 })
+
 export class ClientComponent implements OnInit {
 
-  constructor() { }
+  @Input() client:Client
+  @Output() onCreate: EventEmitter<Client>
+  private model: Client;
+  constructor(private service: ClientService) {
+    this.model = new Client();
+    this.onCreate = new EventEmitter();
+   }
 
   ngOnInit() {
   }
 
+  submit(form: NgForm){
+    let data: Client = JSON.parse(JSON.stringify(this.model));
+    this.onCreate.emit(data);
+    this.service.creat(data);
+    form.resetForm();
+  }
+  
 }

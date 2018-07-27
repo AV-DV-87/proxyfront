@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { SondageComponent } from './sondage/sondage.component';
 import { ReponseComponent } from './reponse/reponse.component';
 import { ClientComponent } from './client/client.component';
+import { ClientService } from './Services/client.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { ClientComponent } from './client/client.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
