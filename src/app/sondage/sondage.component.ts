@@ -10,12 +10,12 @@ import { Observable } from '../../../node_modules/rxjs';
 })
 export class SondageComponent implements OnInit {
 
-  @Input() sondage: Observable<Sondage>;
+  @Input() sondage: Sondage;
 
   constructor(private sondageService: SondageServiceService) { }
 
   ngOnInit() {
-    this.sondage = this.sondageService.getSondage();
+    this.sondageService.getSondage().subscribe((sondage) => this.sondage = sondage);
   }
 
 }
