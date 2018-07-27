@@ -6,14 +6,17 @@ import { TestComponent } from './test/test.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { SondageComponent } from './sondage/sondage.component';
-import { ServiceSondageComponent } from './Services/service-sondage/service-sondage.component';
+import { ReponseComponent } from './reponse/reponse.component';
+import { ClientComponent } from './client/client.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     SondageComponent,
-    ServiceSondageComponent
+    ReponseComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
