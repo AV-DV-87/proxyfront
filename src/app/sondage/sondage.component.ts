@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Sondage } from '../sondage';
+import { SondageServiceService } from '../Services/sondage-service.service';
 
 @Component({
   selector: 'app-sondage',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SondageComponent implements OnInit {
 
-  constructor() { }
+  @Input() sondage: Sondage;
+
+  constructor(private sondageService: SondageServiceService) { }
 
   ngOnInit() {
+    this.sondageService.getSondage()
   }
 
 }
