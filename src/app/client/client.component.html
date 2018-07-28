@@ -2,34 +2,36 @@
   <div class="row h-25 text-center">
     <div class="col">
       <h2> Déja Client ! </h2>
-      <form (ngSubmit)="submit(blogForm)" #blogForm="ngForm">
+      <form (ngSubmit)="submitNum(idForm)" #idForm="ngForm">
         <div class="form-group">
-          <input id="numero" name="numero" class="form-control" [(ngModel)]="model.numero" minlength="10" maxlength="10"
-            required placeholder="N° Identifiant">
-         
+          <input id="numero" type="text" class="form-control" [(ngModel)]="clientNum.numero" #numero="ngModel" required  maxlength="8"
+             placeholder="N° Identifiant" [ngModelOptions]="{standalone: true}">
         </div>
-        <button class="btn btn-primary" >Valider</button>
+        <button [disabled]="idForm.form.invalid" class="btn btn-primary" >Valider</button>
       </form>
-      <br>
-      <h1 class="text-primary mx-auto">Ou</h1>
 
-    <form (ngSubmit)="submit(blogForm)" #blogForm="ngForm">
+      <br>
+      <h1 class="text-primary mx-auto">Où</h1>
+      <h2> Inscrivez vous ! </h2>
+    <!-- <form (ngSubmit)="submit(creatForm)" #creatForm="ngForm">
       <div class="form-group">
-        <input id="nom" name="nom" class="form-control" [(ngModel)]="model.nom"  required placeholder="nom">
+        <input id="nom" name="nom" type="text" #nom="ngModel" [class.is-invalid]="nom.invalid && nom.touched"class="form-control" required  [(ngModel)]="model.nom" placeholder="Nom">
+        <span class="text-danger" [class.d-none] ="name.valid || name.untouched" > Quel est votre nom ? </span>
       </div>
       <div class="form-group">
-        <input id="prenom" name="prenom" class="form-control" [(ngModel)]="model.prenom"  required placeholder="prenom">
+        <input id="prenom" name="prenom" type="text" #prenom="ngModel" [class.is-invalid]="prenom.invalid && prenom.touched" class="form-control" required [(ngModel)]="model.prenom" placeholder="Prénom">
+        <span class="text-danger" [class.d-none] ="prenom.valid || prenom.untouched" > Quel est votre prénom ? </span>
       </div>
       <div class="form-group">
-        <input id="mail" name="mail" class="form-control" [(ngModel)]="model.mail"  required placeholder="mail@domain.com">
+        <input id="mail" name="mail" type="text" #mail="ngModel"  class="form-control" required [(ngModel)]="model.mail" placeholder="ex:mail@domain.com" >
         
       </div>
       <div class="form-group">
-        <input id="telephone" name="telephone" class="form-control" [(ngModel)]="model.telephone" minlength="10" maxlength="10" 
-          required placeholder="ex:0612345678">
+        <input id="telephone" name="telephone" type="text" #telephone="ngModel"  class="form-control" [(ngModel)]="model.telephone"
+           placeholder="ex:0612345678">
         
       </div>
-      <button class="btn btn-primary" >Valider</button>
-    </form>
+      <button [disabled]="creatForm.form.invalid" class="btn btn-primary" >Valider</button>
+    </form> -->
   </div>
 </div>
