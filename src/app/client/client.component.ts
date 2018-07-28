@@ -15,33 +15,31 @@ export class ClientComponent implements OnInit {
 
   @Input() client:Client
   @Output() onCreate: EventEmitter<Client>
-  //@Output() onFind: EventEmitter<string>
   private model: Client;
   private clientNum: Client;
 
   constructor(private service: ClientService) {
     this.model = new Client();
     this.onCreate = new EventEmitter();
-   // this.onFind = new EventEmitter();
+   
    }
 
   ngOnInit() {
     this.model = new Client();
     this.clientNum = new Client();
-    this.clientNum.numero = '';
+    //this.clientNum.numero = '';
 
   }
 
-  // submit(form: NgForm){
-  //   let data: Client = JSON.parse(JSON.stringify(this.model));
-  //   this.onCreate.emit(data);
-  //   this.service.creat(data);
-  //   form.resetForm();
-  // }
+  submit(form: NgForm){
+    let data: Client = JSON.parse(JSON.stringify(this.model));
+    this.onCreate.emit(data);
+    this.service.creat(data);
+    form.resetForm();
+  }
 
   submitNum(form: NgForm){
     let data: Client = JSON.parse(JSON.stringify(this.clientNum));
-    //this.onFind.emit(data);
     this.service.find(data);
     form.resetForm();
   }
