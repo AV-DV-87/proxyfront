@@ -1,3 +1,15 @@
-<p>
-  reponse works!
-</p>
+<div class="col-md-10 mx-auto content">
+  <div class="row h-25 text-center">
+    <div class="col">
+      <h2> Un commentaire ? </h2>
+      <form (ngSubmit)="submitComent(comentForm)" #comentForm="ngForm">
+        <div class="form-group">
+          <input id="commentaire" name="commentaire" type="text" 
+          class="form-control" [(ngModel)]="model.commentaire" #commentaire="ngModel"  
+          placeholder="commentaire" >
+        </div>
+        <button [disabled]="comentForm.form.invalid"  class="btn btn-primary" >Envoyer</button>
+      </form>      
+    </div>
+  </div>
+</div>

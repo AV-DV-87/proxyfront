@@ -3,8 +3,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment as ENV } from '../../environments/environment';
 import { Client } from '../client';
 import { Observable, Subject } from '../../../node_modules/rxjs';
-import { Reponse } from '../reponse';
-import { HttpResponse } from '../../../node_modules/@types/selenium-webdriver/http';
 
 @Injectable({
   providedIn: 'root'
