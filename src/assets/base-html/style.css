@@ -1,11 +1,11 @@
 /* Style général */
 .mid-logo{
-    height: 6rem;
+    height: 8rem;
  }
 
 .principal{
     max-height: 90vh;
-    padding: 5vh;
+    padding: 5vh 0;
 }
 .main-head{
     height: 20vh;
@@ -50,9 +50,20 @@ h2{
 /* VUE 1 BIS DEVIS */
 .bg-devis {
     background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('../img/bg-devis.jpg');
+    background-size: cover;
+}
+.bg-aurevoir {
+    background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('../img/aurevoir.jpg');
+    background-size: cover;
 }
 .titre-devis{
     font-size: 4rem;
     color: #179ad7;
     text-shadow: 1px 1px 2px white;
+}
+.contact-fixed{
+    font-size: 2rem;
+    position: fixed;
+    bottom: 6vh;
+    right: 1vh;
 }
