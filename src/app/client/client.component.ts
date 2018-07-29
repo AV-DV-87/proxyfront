@@ -18,7 +18,7 @@ export class ClientComponent implements OnInit {
   @Output() onCreate: EventEmitter<Client>
   private model: Client;
   private clientNum: Client;
-  public found : boolean;
+  public found : Client;
 
   constructor(private service: ClientService) {
     this.model = new Client();
@@ -43,13 +43,11 @@ export class ClientComponent implements OnInit {
   submitNum(form: NgForm){
     let data: Client = JSON.parse(JSON.stringify(this.clientNum));
     //this.onFind.emit(data);
-    
     this.service.find(data).subscribe(
-      (toto) =>{ this.found = toto;
-        console.log(this.found);
+      (found) =>{ this.found = found;
+        console.log(this.found);                
       }
     );
-    console.log(this.found);
     form.resetForm();
   }
 

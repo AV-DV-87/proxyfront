@@ -30,19 +30,30 @@ export class ClientService {
     return result;
   }
 
-  find(client: Client): Subject<boolean> {
+  // find(client: Client): Subject<boolean> {
+  //   console.log("on est dans clientService")
+  //   let result = new Subject<boolean>();
+  //   this.httpClient.get(this.apiUrl + '/find/' + client.numero)    
+  //   .subscribe((result) => {
+  //       // console.log(rep);
+
+  //       // result.complete();
+  //     }, (response: HttpErrorResponse) => {
+  //       result.error(response.message);
+  //     });
     
-    let result = new Subject<boolean>();
-    this.httpClient.get(this.apiUrl + '/find/' + client.numero, {responseType: 'text'})    
-    .subscribe((rep) => {
-        // console.log(rep);
-        
-        result.complete();
-      }, (response: HttpErrorResponse) => {
+  //   return result;
+  // }
+
+  find(client: Client): Observable<Client> {
+    let result = new Subject<Client>();
+    this.httpClient.get<Client>(this.apiUrl+'/find'+client.numero)
+      .subscribe((clientNumber) => {
+        result.next(clientNumber);
+        console.log("clientNumber du service : "+clientNumber);
+      },(response: HttpErrorResponse) => {
         result.error(response.message);
       });
-    
     return result;
   }
-
 }
