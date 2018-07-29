@@ -1,27 +1,33 @@
 # Proxyfront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Ce projet a été réalisé sur l'[Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Pour le front-end :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Lancer une invite de commande dans le do
 
-## Build
+Concernant le front :
+* Avoir installé NodeJS 8.11.3 minimum
+* Avoir installé NPM 5.6 minimun
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Exemple d'utilisation
 
-## Running end-to-end tests
+TODO modif cas d'utilisation
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### 1- Accès au sondage
+Lamine ou Lamine LOLO - Zidane ou Zidane ZOZO - Fabien ou Fabien FOFO - Steven ou Steven SOSO
+Date de naissance pour Lamine 01/04/1985
 
-## Further help
+### 2- Une fois connecté vous pouvez consulter le solde des différents comptes de ce client
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### 3- Vous pouvez effectuer des opérations retrait argent, carte bancaire ou chequier
+    * Differents tests sur retrait CB possibles sur les comptes client Lamine.
+    * Differents tests sur retrait Chequier possibles sur les comptes client Lamine.
+    
+### 4- Vous pouvez vous deconnecter pour tester un autre compte client.
