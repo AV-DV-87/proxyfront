@@ -15,8 +15,13 @@ export class ReponseService {
   }
 
   createReponseNo(reponse: Reponse) : Observable<Reponse> {
-    result = new Subject<Reponse>;
+    let result = new Subject<Reponse>();
+    console.log("Reponse Service commentaire reçu : " + reponse.commentaire)
     const url = this.apiURL + '/negative/1';
-    return this.http.post<Reponse>(url, reponse);
+    this.http.post<Reponse>(url, reponse).subscribe(
+      (reponse) => result.next(reponse)
+    ); 
+    console.log("le resultat du POST : " + result);
+    return result;
   }
 }

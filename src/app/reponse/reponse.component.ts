@@ -20,6 +20,7 @@ export class ReponseComponent implements OnInit {
   submitComent(form : NgForm){
     //format de saisie à JSON
     let data : Reponse = JSON.parse(JSON.stringify(this.model));
+    console.log("FormComent soumis avec le commentaire : "+this.model.commentaire);
     //utilisation du service
     this.service.createReponseNo(data);
     form.resetForm();

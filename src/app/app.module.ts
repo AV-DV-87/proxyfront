@@ -9,6 +9,8 @@ import { SondageComponent } from './sondage/sondage.component';
 import { ReponseComponent } from './reponse/reponse.component';
 import { ClientComponent } from './client/client.component';
 import { ClientService } from './Services/client.service';
+import { ReponseService } from './Services/reponse.service';
+import { SondageServiceService } from './Services/sondage-service.service';
 
 
 @NgModule({
@@ -24,7 +26,7 @@ import { ClientService } from './Services/client.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ClientService],
+  providers: [ClientService, ReponseService, SondageServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
