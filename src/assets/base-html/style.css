@@ -51,6 +51,9 @@ h2{
 .bg-devis {
     background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('../img/bg-devis.jpg');
 }
+.bg-aurevoir {
+    background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('../img/aurevoir.jpg');
+}
 .titre-devis{
     font-size: 4rem;
     color: #179ad7;
