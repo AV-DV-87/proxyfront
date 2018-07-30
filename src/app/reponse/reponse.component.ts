@@ -10,11 +10,13 @@ import { ReponseService } from '../Services/reponse.service';
 })
 export class ReponseComponent implements OnInit {
   private model: Reponse;
+  private showBye: boolean;
 
   constructor(private service : ReponseService) { }
 
   ngOnInit() {
     this.model = new Reponse();
+    this.showBye=false;
   }
 
   submitComent(form : NgForm){

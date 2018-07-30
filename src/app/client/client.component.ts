@@ -3,7 +3,8 @@ import { Client } from '../client';
 import { NgForm } from '@angular/forms';
 import { ClientService } from '../Services/client.service';
 import { Sondage } from '../sondage';
-import { DatePipe } from '../../../node_modules/@angular/common';
+import { SondageServiceService } from '../Services/sondage-service.service';
+
 
 
 
@@ -25,7 +26,7 @@ export class ClientComponent implements OnInit {
   private dateFin : Date;
   private jourContact: number;
 
-  constructor(private service: ClientService) {
+  constructor(private service: ClientService, private serviceSond: SondageServiceService) {
     this.onCreate = new EventEmitter();
     this.onFind = new EventEmitter();
    
@@ -34,11 +35,9 @@ export class ClientComponent implements OnInit {
   ngOnInit() {
     this.newClient = new Client();
     this.clientSearch = new Client();
-    this.dateFin = new Date(this.sondage.dateFin);
-    this.jourContact = this.calculDiffJour(this.dateFin);
-    // console.log(this.newClient);
-    // console.log(this.clientSearch);
-    console.log("Input de dateFin : " + this.dateFin.getTime);
+    this.diplayNbJour();
+    this.jourContact = null;
+    
   }
 
   submit(form: NgForm){
@@ -67,17 +66,14 @@ export class ClientComponent implements OnInit {
     console.log(this.clientSearch);
   }
 
-  calculDiffJour(dateFin: Date) : number{
-    let result : number;
-    console.log("J'ai récupéré la date de fin : " + dateFin)
-    // calcul différence entre dateFin du sondage en cours et dateActuelle
-    let actualDate = Date.now();
-    console.log("Date du jour bonjour : "+ actualDate);
-    let diff = dateFin.getTime() - actualDate;
-
-    console.log("valueOf dateFin "+ diff);
-
-    return result;
+  diplayNbJour(){
+    let result : number = null;
+    console.log("methode affichages des nombres jours pour contact lancé")
+    this.serviceSond.getNbJour().subscribe((nbjour)=>{
+      this.jourContact = nbjour;
+      console.log(result);
+    });
+    
   }
   
 }
