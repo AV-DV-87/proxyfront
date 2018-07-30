@@ -27,10 +27,10 @@
             <span class="text-danger" [class.d-none]="prenom.valid || prenom.untouched"> Quel est votre prénom ? </span>
           </div>
           <div class="form-group">
-            <input id="mail" name="mail" type="text" #mail="ngModel" class="form-control" required [(ngModel)]="newClient.mail" placeholder="ex:mail@domain.com">
+            <input id="mail" name="mail" type="email" #mail="ngModel" class="form-control"  [(ngModel)]="newClient.mail" placeholder="ex:mail@domain.com"  required>
           </div>
           <div class="form-group">
-            <input id="telephone" name="telephone" type="tel" #telephone="ngModel" class="form-control" [(ngModel)]="newClient.telephone"
+            <input id="telephone" name="telephone" type="text"  #telephone="ngModel" class="form-control" [(ngModel)]="newClient.telephone"
               maxlength="10" minlength="10" placeholder="ex:0612345678">
           </div>
           <button [disabled]="creatForm.form.invalid" class="btn btn-primary">Valider</button>
