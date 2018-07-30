@@ -14,10 +14,10 @@ Lancer la commande 'ng serve -o' pour lancer le server et ouvrir l'adresse `http
 
 ### 1- Choix de répondre ou non à un sondage
 
-#### 2-1 Réponse négative
+### 2-1 Réponse négative
 Réponse négative avec ou sans commentaire
 
-#### 2-2 Réponse positive
+### 2-2 Réponse positive
 Avec un numéro de client existant ou juste en entrant des infos personnelles
 
 ### 3- Affichage d'un message en fonction de la réponse
