@@ -47,15 +47,21 @@ export class ClientService {
 
   find(client: Client): Observable<Client> {
     let result = new Subject<Client>();
-    this.httpClient.post<Client>(this.apiUrl+'/find'+client.numero)
-      .subscribe((clientNumber) => {
-        result.complete();
-        console.log("clientNumber du service : "+clientNumber);
-      },(response: HttpErrorResponse) => {
-        result.error(response.message);
-      });
-    return result;
+		this.httpClient.get<Client>(this.apiUrl+ '/find/'+ client.numero)
+			.subscribe(
+				(client) => result.next(client)
+      );
+		return result;
   }
+  // let result = new Subject<Client>();
+  //   this.httpClient.post<Client>(this.apiUrl+'/find'+client.numero, )
+  //     .subscribe((clientNumber) => {
+  //       result.complete();
+  //       console.log("clientNumber du service : "+clientNumber);
+  //     },(response: HttpErrorResponse) => {
+  //       result.error(response.message);
+  //     });
+  //   return result;
 
   
 }

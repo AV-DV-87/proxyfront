@@ -1,16 +1,14 @@
 <div class="container">
-  <div class="col-md-10 mx-auto content" *ngIf="yolo; else bye">
+  <div class="col-md-10 mx-auto content" >
     <div class="row h-25 text-center">
       <div class="col">
         <h2> Déja Client ! </h2>
-        <form (ngSubmit)="submitNum(foundForm)">
+        <form (ngSubmit)="submitNum(foundForm)" #foundForm="ngForm">
           <div class="form-group">
             <input id="numero" name="numero" type="text" class="form-control" [(ngModel)]="clientNum.numero" #numero="ngModel" required
               maxlength="8" minlength="8" placeholder="N° Identifiant">
-          </div>
-          <a href="" (click)="yolo = !yolo">
-            <button [disabled]="foundForm.form.invalid" class="btn btn-primary" ()>Valider</button>
-          </a>
+          </div>          
+            <button [disabled]="foundForm.form.invalid" class="btn btn-primary" >Valider</button>        
         </form>
         <br>
         <h1 class="text-primary mx-auto">OU</h1>
@@ -32,15 +30,13 @@
           <div class="form-group">
             <input id="telephone" name="telephone" type="tel" #telephone="ngModel" class="form-control" [(ngModel)]="model.telephone"
               maxlength="10" minlength="10" placeholder="ex:0612345678">
-          </div>
-          <a href="" (click)="yolo = !yolo">
-            <button [disabled]="creatForm.form.invalid" class="btn btn-primary" yolo='true'>Valider</button>
-          </a>
+          </div>          
+            <button [disabled]="creatForm.form.invalid" class="btn btn-primary">Valider</button>
         </form>
       </div>
     </div>
   </div>
-  <ng-template #bye>
+  <!-- <ng-template>
     <div class="container-fluid principal">
       <div class="main-head">
         <div class="sticky-top text-center">
@@ -54,5 +50,5 @@
         </div>
       </div>
     </div>
-  </ng-template>
+  </ng-template> -->
 </div>

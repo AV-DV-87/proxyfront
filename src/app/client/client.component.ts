@@ -43,14 +43,17 @@ export class ClientComponent implements OnInit {
   }
 
   submitNum(form: NgForm){
-    let data: Client = JSON.parse(JSON.stringify(this.clientNum));
-    this.onFind.emit(data);
+    // let data: Client = JSON.parse(JSON.stringify(this.clientNum));
+    // this.onFind.emit(data);
     // this.service.find(data).subscribe(
     //   (found) =>{ this.found = found;
     //     console.log(this.found);                
     //   }
     // );
-    
+    this.service.find(this.clientNum).subscribe((clientNum) => {
+      this.clientNum = clientNum;
+      console.log(this.clientNum)
+    });
     form.resetForm();
   }
 
