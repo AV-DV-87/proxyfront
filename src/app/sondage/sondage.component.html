@@ -1,4 +1,4 @@
-<div *ngIf="sondage != undefined && showClient == false && showReponse == false">
+<div *ngIf="sondage !== undefined && !showClient && !showReponse">
     <div class="col-md-10 mx-auto content">
         <div class="row h-25 text-center">
             <div class="col">
@@ -27,5 +27,5 @@
     </div>
 </div>
 
-<app-client *ngIf="showClient == true"></app-client>
-<app-reponse *ngIf="showReponse == true"></app-reponse>
+<app-client *ngIf="showClient" [sondage]="sondage"></app-client>
+<app-reponse *ngIf="showReponse"></app-reponse>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment as ENV } from '../../environments/environment';
 import { Sondage } from '../sondage';

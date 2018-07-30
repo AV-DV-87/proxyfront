@@ -22,7 +22,8 @@ export class ClientService {
     let result = new Subject<Client>();
     this.httpClient.post<Client>(this.apiUrl, client)
       .subscribe((newClient) => {
-        result.complete();
+        result.next(newClient);
+        console.log(newClient)
       }, (response: HttpErrorResponse) => {
         result.error(response.message);
       });
