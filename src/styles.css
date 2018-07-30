@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* Style général */
 .mid-logo{
-    height: 6rem;
+    height: 8rem;
  }
 
 .principal{
@@ -55,7 +55,7 @@ h2{
     background-size: cover;
 }
 .bg-aurevoir {
-    background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('/assets/img/aurevoir.jpg');
+    background-image: radial-gradient( rgba(215, 227, 230, 0.8),rgba(17,30,108,0.5)), url('/assets/img/aurevoir.jpg');
     background-size: cover;
 }
 .titre-devis{
