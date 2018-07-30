@@ -70,7 +70,7 @@ export class ClientComponent implements OnInit {
     // calcul différence entre dateFin du sondage en cours et dateActuelle
     let ActualDate = Date.now;
     
-    return diffJour;
+    return null;
   }
   
 }
