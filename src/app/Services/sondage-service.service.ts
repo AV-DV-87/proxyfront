@@ -30,5 +30,11 @@ export class SondageServiceService {
 				(sondage) => result.next(sondage)
       );
 		return result;
-	}
+  }
+  getNbJour():Observable<number>{
+    let result = new Subject<number>();
+    this.httpClient.get<number>(this.apiUrl+'/nbjour')
+    .subscribe((nbjour)=>result.next(nbjour));
+    return result;
+  }
 }
