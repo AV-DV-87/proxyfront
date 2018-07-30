@@ -10,8 +10,10 @@
           </div>
           <button [disabled]="foundForm.form.invalid" class="btn btn-primary">Valider</button>
         </form>
+
         <br>
         <h1 class="text-primary mx-auto">OU</h1>
+        
         <h2> Inscrivez-vous ! </h2>
         <form (ngSubmit)="submit(creatForm)" #creatForm="ngForm">
           <div class="form-group">
@@ -47,7 +49,7 @@
     <div class="col content bg-aurevoir">
       <div class="row h-100 d-flex align-items-center justify-content-center text-center p-4">
         <h1 class="titre-devis">Vous serez contacté dans un délai de
-          <span class="text-warning">[sondage.dateFin]</span> jours par un de nos conseillers experts en assurance auto</h1>
+          <span class="text-warning">{{jourContact}}</span> jours par un de nos conseillers experts en assurance auto</h1>
       </div>
     </div>
   </div>

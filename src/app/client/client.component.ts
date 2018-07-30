@@ -22,6 +22,7 @@ export class ClientComponent implements OnInit {
   private newClient: Client;
   private clientSearch: Client;
   public found : Client;
+  private dateFin : Date;
   private jourContact: number;
 
   constructor(private service: ClientService) {
@@ -33,10 +34,11 @@ export class ClientComponent implements OnInit {
   ngOnInit() {
     this.newClient = new Client();
     this.clientSearch = new Client();
-    //this.clientSearch.numero = '';
-    console.log(this.newClient);
-    console.log(this.clientSearch);
-    console.log(this.sondage.dateFin);
+    this.dateFin = new Date(this.sondage.dateFin);
+    this.jourContact = this.calculDiffJour(this.dateFin);
+    // console.log(this.newClient);
+    // console.log(this.clientSearch);
+    console.log("Input de dateFin : " + this.dateFin.getTime);
   }
 
   submit(form: NgForm){
@@ -65,12 +67,17 @@ export class ClientComponent implements OnInit {
     console.log(this.clientSearch);
   }
 
-  calculDiffJour(dateFin: DatePipe){
-    let jourContact: number;
+  calculDiffJour(dateFin: Date) : number{
+    let result : number;
+    console.log("J'ai récupéré la date de fin : " + dateFin)
     // calcul différence entre dateFin du sondage en cours et dateActuelle
-    let ActualDate = Date.now;
-    
-    return null;
+    let actualDate = Date.now();
+    console.log("Date du jour bonjour : "+ actualDate);
+    let diff = dateFin.getTime() - actualDate;
+
+    console.log("valueOf dateFin "+ diff);
+
+    return result;
   }
   
 }
