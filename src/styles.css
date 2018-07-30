@@ -49,13 +49,13 @@ h2{
 
 
 /* VUE 1 BIS DEVIS */
-/*
+
 .bg-devis {
-    background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('assets/img/bg-devis.jpg');
+    background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('/assets/img/bg-devis.jpg');
     background-size: cover;
 }
 .bg-aurevoir {
-    background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('assets/img/aurevoir.jpg');
+    background-image: radial-gradient( rgba(23,153,184, 0.2),rgba(17,30,108,0.5)), url('/assets/img/aurevoir.jpg');
     background-size: cover;
 }
 .titre-devis{
@@ -69,4 +69,3 @@ h2{
     bottom: 6vh;
     right: 1vh;
 }
-*/
