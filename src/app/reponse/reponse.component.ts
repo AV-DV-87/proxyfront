@@ -25,6 +25,7 @@ export class ReponseComponent implements OnInit {
     console.log("FormComent soumis avec le commentaire : "+this.model.commentaire);
     //utilisation du service
     this.service.createReponseNo(data);
+    this.showBye=true;
     form.resetForm();
   }
 
